@@ -50,10 +50,6 @@ This document defines the hardware and software interface requirements for the R
 - Standard keyboard and mouse/touchscreen input only
 - No external devices or peripherals needed
 
-**Optional Hardware**:
-- Camera optional (for future image capture features, not in current scope)
-- Microphone optional (for future audio features, not in current scope)
-
 ## Browser Compatibility
 
 **Supported Browsers**:

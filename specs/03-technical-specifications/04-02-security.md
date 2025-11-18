@@ -21,11 +21,10 @@ This document defines security requirements and mechanisms for the Rings applica
 ## 4.2.2 Authentication and Session Management
 
 **Authentication Tokens**:
-- Authentication uses JWT tokens or session cookies (implementation choice: session cookies with @fastify/cookie)
-- Tokens/cookies must be HTTP-only to prevent XSS attacks
-- Tokens/cookies must be secure (HTTPS-only) in production
-- Token expiration: 7 days of inactivity (or session-based expiration)
-- Tokens must be invalidated on logout
+- Authentication uses session cookies with @fastify/cookie plugin. Session cookies are HTTP-only and secure.
+- Cookies must be secure (HTTPS-only) in production
+- Session expiration: 7 days of inactivity
+- Sessions must be invalidated on logout
 
 **Session Management**:
 - Session data stored server-side (in-memory or database)
@@ -81,7 +80,7 @@ This document defines security requirements and mechanisms for the Rings applica
 - Rate limit exceeded responses: HTTP 429 Too Many Requests with Retry-After header
 
 **Rate Limiting Implementation**:
-- Rate limiting can be implemented using in-memory store or Redis (in-memory sufficient for initial version)
+- Rate limiting is implemented using in-memory store. Rate limits are tracked per user/IP in server memory.
 - Rate limits reset after time window expires
 - Rate limit headers included in responses: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset
 

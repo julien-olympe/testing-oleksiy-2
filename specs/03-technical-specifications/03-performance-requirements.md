@@ -44,10 +44,9 @@ The system must support 1000 concurrent authenticated users performing operation
 - Storage grows dynamically as users upload images
 
 **File Storage Implementation**:
-- Images stored in file system or cloud storage (AWS S3, Google Cloud Storage, or local filesystem)
-- Image URLs stored in database (Post.image_url field)
+- Images stored in local filesystem. Image URLs stored in database (Post.image_url field). File paths are relative to application root or absolute paths to dedicated storage directory.
 - Image optimization: Backend processes and optimizes images before storage (resize, compress)
-- Image serving: Images served via HTTP/HTTPS, either directly from storage or through CDN
+- Image serving: Images served via HTTP/HTTPS directly from storage
 
 **File Management**:
 - Images are permanent and not automatically deleted
