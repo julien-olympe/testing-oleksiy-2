@@ -2,7 +2,57 @@
 
 This document defines general rules and patterns that apply to all APIs in the Rings application.
 
-## 1. Authentication Mechanism
+## 1. Introduction
+
+This document provides comprehensive API documentation for the Rings application. All APIs follow RESTful conventions and are designed to be testable and mockable.
+
+### Authentication Mechanism
+
+The Rings API uses session-based authentication with HTTP-only cookies managed by the `@fastify/cookie` plugin. This provides secure, stateless session management without exposing session tokens to client-side JavaScript.
+
+**Session Cookie Configuration**:
+- **HTTP-only**: Cookies are not accessible via JavaScript (prevents XSS attacks)
+- **Secure**: Cookies are only sent over HTTPS in production
+- **Expiration**: 7 days of inactivity
+- **Path**: `/` (available to all API endpoints)
+
+**Authentication Flow**:
+1. User authenticates via `/api/auth/register` or `/api/auth/login`
+2. Server creates a session and sets an HTTP-only cookie with session ID
+3. Client automatically includes the cookie in subsequent requests
+4. Server validates the session on each protected endpoint
+5. Invalid or expired sessions return `401 Unauthorized`
+
+**Protected Endpoints**: All endpoints except `/api/auth/register` and `/api/auth/login` require authentication.
+
+### Logging and Error Handling
+
+**Logging Patterns**:
+- All API requests are logged with: timestamp, HTTP method, endpoint path, user ID (if authenticated), request ID
+- All errors are logged server-side with: timestamp, error type, error message, stack trace, request details
+- Logs do not contain sensitive information (passwords, authentication tokens, session IDs)
+
+**Error Handling Patterns**:
+- All API endpoints implement try-catch blocks to handle exceptions
+- Unhandled exceptions do not crash the server
+- All exceptions are caught and converted to appropriate HTTP error responses
+- Error responses include user-friendly error messages in response body
+- Technical error details (stack traces, database errors) are not exposed to clients in production
+
+**Database Exception Handling**:
+- All database operations are wrapped in try-catch blocks
+- Database connection errors are handled gracefully
+- Query errors are caught and converted to user-friendly messages
+- Foreign key constraint violations return specific error messages (e.g., "Ring not found")
+- Unique constraint violations return specific error messages (e.g., "Username already exists")
+
+**Transaction Management**:
+- All database operations that modify multiple tables use transactions
+- Transactions are rolled back if any operation within the transaction fails
+- Default transaction isolation level: READ COMMITTED
+- Transactions prevent race conditions (e.g., duplicate memberships)
+
+## 2. Authentication Mechanism
 
 ### Session Management
 - All APIs use session-based authentication with HTTP-only cookies
@@ -24,7 +74,7 @@ This document defines general rules and patterns that apply to all APIs in the R
 - Unauthenticated requests to protected endpoints return `401 Unauthorized`
 - Authentication validation occurs before any business logic execution
 
-## 2. Logging and Error Handling
+## 3. Logging and Error Handling
 
 ### Logging Patterns
 - All API requests must be logged with: timestamp, HTTP method, endpoint path, user ID (if authenticated), request ID
@@ -71,7 +121,7 @@ All error responses follow this structure:
 - Default transaction isolation level: READ COMMITTED
 - Transactions prevent race conditions (e.g., duplicate memberships)
 
-## 3. Input Validation
+## 4. Input Validation
 
 ### Validation Rules
 - All input validation must occur server-side (client-side validation is for UX only)
@@ -95,7 +145,7 @@ All error responses follow this structure:
 - HTML tags in user input must be escaped or stripped
 - Image URLs must be validated to prevent javascript: or data: protocol injections
 
-## 4. Rate Limiting
+## 5. Rate Limiting
 
 ### Rate Limit Rules
 - Rate limiting is implemented using in-memory store
@@ -115,7 +165,7 @@ All responses include rate limit headers:
 - Search endpoints: 20 requests per minute per user
 - General API endpoints: 100 requests per minute per user
 
-## 5. CORS Configuration
+## 6. CORS Configuration
 
 ### CORS Policy
 - CORS configured using `@fastify/cors` plugin
@@ -125,7 +175,7 @@ All responses include rate limit headers:
 - Credentials: true (cookies and authentication headers allowed)
 - Preflight requests: Handled automatically by `@fastify/cors`
 
-## 6. API Design Standards
+## 7. API Design Standards
 
 ### RESTful Conventions
 - All API endpoints follow RESTful conventions
@@ -145,7 +195,7 @@ All responses include rate limit headers:
 - Types must be defined using TypeScript interfaces
 - Types must match database schema types where applicable
 
-## 7. Performance Requirements
+## 8. Performance Requirements
 
 ### Response Time Targets
 - News Feed loading: Within 2 seconds (for users with up to 50 Rings)
@@ -158,7 +208,7 @@ All responses include rate limit headers:
 - Complex queries (News Feed aggregation) must complete within 1.5 seconds
 - Simple queries (single record lookup) must complete within 50ms
 
-## 8. Testability
+## 9. Testability
 
 ### Mockable Design
 - All APIs must be designed to be testable in a mockable way
@@ -171,7 +221,7 @@ All responses include rate limit headers:
 - Test factories or fixtures should be used for consistent test data creation
 - Tests must not depend on production data
 
-## 9. Authorization and Access Control
+## 10. Authorization and Access Control
 
 ### Ring Access Control
 - Users can only access Rings they are members of
@@ -185,7 +235,7 @@ All responses include rate limit headers:
 - Users can only add posts to Rings they are members of
 - Users can only add other users to Rings they are members of
 
-## 10. File Upload Handling
+## 11. File Upload Handling
 
 ### Image Upload Rules
 - Maximum file size: 10MB
