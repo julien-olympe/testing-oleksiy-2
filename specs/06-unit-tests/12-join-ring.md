@@ -65,7 +65,7 @@ const ring2 = { id: uuid(), name: 'Another Ring', creator_id: user2.id };
 **Test Steps**:
 1. Create ring with user1 as creator
 2. Authenticate as user2 (not a member)
-3. Send POST request to `/api/rings/:ringId/join`
+3. Send POST request to `/api/rings/:id/join`
 4. Verify response status code is 201 Created
 5. Verify membership is created in database
 6. Verify success message is returned
@@ -205,7 +205,7 @@ expect(afterRing.isMember).toBe(true);
 **Description**: Verifies that unauthenticated join requests are rejected.
 
 **Test Steps**:
-1. Send POST request to `/api/rings/:ringId/join` without authentication token
+1. Send POST request to `/api/rings/:id/join` without authentication token
 2. Verify request is rejected
 
 **Expected Results**:

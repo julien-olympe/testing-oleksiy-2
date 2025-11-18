@@ -66,7 +66,7 @@ const initialMembership = { user_id: user1.id, ring_id: ring1.id };
 1. Create ring with user1 as member
 2. Create user2 (not a member)
 3. Authenticate as user1
-4. Send POST request to `/api/rings/:ringId/members` with user2's username
+4. Send POST request to `/api/rings/:id/members` with user2's username
 5. Verify response status code is 201 Created
 6. Verify membership is created in database
 7. Verify success message is returned
@@ -272,7 +272,7 @@ expect(response.body.error).toBeDefined();
 **Description**: Verifies that unauthenticated requests are rejected.
 
 **Test Steps**:
-1. Send POST request to `/api/rings/:ringId/members` without authentication token
+1. Send POST request to `/api/rings/:id/members` without authentication token
 2. Verify request is rejected
 
 **Expected Results**:
