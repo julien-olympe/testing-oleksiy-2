@@ -45,7 +45,7 @@ This section details News Feed viewing and post creation use cases for the Rings
 
 **Inputs and Sources**:
 - Search query: Text input from user in News Feed search bar (optional, can be empty)
-- Search submission or real-time search: User typing or pressing enter
+- Real-time search: System searches as user types
 
 **Processing/Actions**:
 1. System receives search query from frontend

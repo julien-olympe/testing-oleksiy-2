@@ -28,7 +28,7 @@ This section describes the Ring discovery screens (Find Ring, Create Ring) and t
   - Member count (e.g., "15 members")
   - "Join" button (only shown if user is not a member)
   - Status indicator or no button (if user is already a member, shows "Member" or similar)
-- Results are ordered by relevance or alphabetically
+- Results are ordered alphabetically by name
 - Empty state message when no search has been performed or no results found
 - Loading indicator while fetching search results
 

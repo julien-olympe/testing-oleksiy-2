@@ -19,7 +19,7 @@ This section describes the main content screens: Home (News Feed), My Rings, and
 - Text input field with placeholder "Search Rings..."
 - Search icon or button
 - Clear button (X) appears when text is entered
-- Real-time or on-submit search functionality
+- Real-time search functionality (searches as user types)
 
 **News Feed**:
 - Scrollable list of News Tiles
@@ -61,7 +61,7 @@ This section describes the main content screens: Home (News Feed), My Rings, and
 - Text input field with placeholder "Search my Rings..."
 - Search icon or button
 - Clear button (X) appears when text is entered
-- Real-time or on-submit search functionality
+- Real-time search functionality (searches as user types)
 
 **Rings List**:
 - Scrollable list of Ring items
@@ -69,7 +69,7 @@ This section describes the main content screens: Home (News Feed), My Rings, and
   - Ring name (ellipsized to 20 characters, full name shown on hover/tooltip)
   - Member count (e.g., "15 members")
   - Clickable area (entire item is clickable)
-- Ring items are ordered alphabetically by name or by most recent activity
+- Ring items are ordered alphabetically by name
 - Empty state message when user has no Rings
 - Loading indicator while fetching data
 
