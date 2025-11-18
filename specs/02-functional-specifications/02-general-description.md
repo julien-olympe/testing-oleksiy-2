@@ -108,7 +108,6 @@ Rings serves two primary user segments:
 **Device Access**: Users access Rings through:
 - Modern web browsers (Chrome, Firefox, Safari, Edge) on desktop and laptop computers
 - Mobile web browsers on smartphones and tablets
-- Mobile applications (future consideration, not in current scope)
 
 ## 2.4 Main Development Constraints
 

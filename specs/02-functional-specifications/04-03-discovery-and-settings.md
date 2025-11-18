@@ -84,7 +84,7 @@ This section describes the Ring discovery screens (Find Ring, Create Ring) and t
 
 **User Information Section**:
 - Username label and display (read-only)
-- User profile information (if expanded in future, currently just username)
+- User profile information: username only
 
 **Account Actions Section**:
 - Logout button (prominent, styled as primary action)
