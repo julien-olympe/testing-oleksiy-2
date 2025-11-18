@@ -31,3 +31,5 @@ The user should be able to set the Name of the Ring and be able to create the Ri
 If clicked Settings, the user should be anble to see the log out button and the username
 
 The happy path: user registers, observes the news feed, creates a Ring, add a registered friend, clicks the My rings, chooses a Ring he is part of, posts a message with a pic, goes to home and sees the post in the news feed, The added friend logs in and sees the news too as he was added by the user.
+
+Do not ask human, try to make the most optimal decision on your own
