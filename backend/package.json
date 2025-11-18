@@ -7,7 +7,9 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
-    "migrate": "tsx src/database/migrate.ts"
+    "migrate": "tsx src/database/migrate.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -26,9 +28,12 @@
   },
   "devDependencies": {
     "@types/bcrypt": "latest",
+    "@types/jest": "latest",
     "@types/node": "latest",
     "@types/pg": "latest",
     "@types/uuid": "latest",
+    "jest": "latest",
+    "ts-jest": "latest",
     "tsx": "latest",
     "typescript": "latest"
   }
