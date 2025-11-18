@@ -18,6 +18,7 @@
     "@fastify/multipart": "latest",
     "@fastify/rate-limit": "latest",
     "@fastify/session": "latest",
+    "@fastify/static": "latest",
     "bcrypt": "latest",
     "fastify": "latest",
     "pg": "latest",
