@@ -10,9 +10,13 @@ Rings is a full-stack web and mobile application that combines messenger and soc
 
 - **Database**: A PostgreSQL relational database that stores all persistent data including users, Rings, posts, memberships, and images.
 
-- **Image Storage**: Image files uploaded by users are stored in the file system or cloud storage, with references stored in the database.
+- **Image Storage**: Image files uploaded by users are stored in the local filesystem, with references stored in the database.
 
 - **Real-time Updates**: The system uses polling mechanisms to update the News Feed and Chat interfaces with new posts and messages.
+
+### System Diagram
+
+The system can be represented as a major use case "Rings Platform" with two primary actors: Registered User and System. Registered User interacts with the System through the frontend interface, sending HTTP requests for authentication, Ring management, post creation, and content viewing. The System processes these requests through the backend API, interacts with the PostgreSQL database for data persistence, and manages file storage for images. All interactions flow through the RESTful API layer.
 
 ### System Actors
 

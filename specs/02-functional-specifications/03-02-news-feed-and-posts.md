@@ -119,7 +119,7 @@ This section details News Feed viewing and post creation use cases for the Rings
 4. System validates message text is not empty and meets length requirements
 5. If picture is provided:
    - System validates file type and size
-   - System uploads image file to storage (file system or cloud storage)
+   - System uploads image file to local filesystem storage
    - System stores image URL in database
 6. System creates new Post record in database with:
    - ring_id

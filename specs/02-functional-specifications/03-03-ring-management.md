@@ -112,7 +112,7 @@ This section details Ring creation, discovery, membership, and management use ca
 4. System retrieves User record for the username to be added
 5. If username does not exist, operation fails
 6. System checks if the user to be added is already a member of the Ring
-7. If user is already a member, operation fails (or succeeds silently)
+7. If user is already a member, operation fails with error message
 8. System creates new Membership record linking the user to the Ring
 9. System returns success response
 10. Frontend displays confirmation message
@@ -173,7 +173,7 @@ This section details Ring creation, discovery, membership, and management use ca
 **Processing/Actions**:
 1. System validates user authentication token
 2. System verifies user is not already a member of the specified Ring
-3. If user is already a member, operation fails (or succeeds silently)
+3. If user is already a member, operation fails with error message
 4. System creates new Membership record linking user to the Ring
 5. System returns success response with updated Ring data (now showing user as member)
 6. Frontend updates the Ring item to remove "Join" button
