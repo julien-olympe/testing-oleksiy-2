@@ -1,3 +1,5 @@
+// MUST import env config FIRST before any other imports
+import './config/env';
 import Fastify from 'fastify';
 import cookie from '@fastify/cookie';
 import cors from '@fastify/cors';
