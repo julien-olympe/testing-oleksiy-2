@@ -2,7 +2,7 @@ RINGS
 you are going to create a combo of a messendger-social network, let's call it Rings.
 A Ring is kind of a group, but basically a chatroom in which the users post messages and/or pics.
 
-Image Storage Solution:\n   A) Local filesystem storage
+Image Storage Solution: Local filesystem storage
 
 Login screen
 The user can resister or log in
