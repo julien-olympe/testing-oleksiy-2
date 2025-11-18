@@ -39,7 +39,7 @@ This section describes the Ring discovery screens (Find Ring, Create Ring) and t
 - Join Ring (Apply for Membership) (3.12): Joining a Ring by clicking Join button
 
 **Navigation**:
-- After joining a Ring, user can navigate to that Ring's Chat (Join button could navigate, or user can go to My Rings)
+- After joining a Ring, user is automatically redirected to that Ring's Chat screen
 - Footer buttons navigate to respective screens
 
 ## 4.7 Create Ring Screen
@@ -59,7 +59,7 @@ This section describes the Ring discovery screens (Find Ring, Create Ring) and t
 - Character count indicator (showing remaining characters out of 100)
 - Create button (enabled when Ring name is entered and valid)
 - Validation error messages displayed below input field
-- Help text or description (optional, explaining what a Ring is)
+- Help text displayed below the input field explaining what a Ring is (e.g., "A Ring is a private group where members can share messages and pictures")
 
 **Footer Navigation**: Standard footer with all five buttons
 
@@ -88,7 +88,7 @@ This section describes the Ring discovery screens (Find Ring, Create Ring) and t
 
 **Account Actions Section**:
 - Logout button (prominent, styled as primary action)
-- Confirmation dialog may appear when logout is clicked (optional, can be direct logout)
+- Confirmation dialog appears when logout is clicked, asking "Are you sure you want to logout?" with "Cancel" and "Logout" options
 
 **Footer Navigation**: Standard footer with all five buttons
 

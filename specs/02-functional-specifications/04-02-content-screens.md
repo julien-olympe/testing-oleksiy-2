@@ -28,7 +28,7 @@ This section describes the main content screens: Home (News Feed), My Rings, and
   - Post picture thumbnail (if post has an image, clickable to view full size)
   - First 100 characters of message text (truncated with ellipsis if longer)
   - Post timestamp (relative time, e.g., "2 hours ago")
-  - Author username (optional, can be shown)
+  - Author username
 - News Tiles are ordered newest first (reverse chronological)
 - Empty state message when no posts are available
 - Loading indicator while fetching data
@@ -100,7 +100,8 @@ This section describes the main content screens: Home (News Feed), My Rings, and
 
 **Ring Header**:
 - Ring name displayed prominently
-- Optional: Member count or "Add User" button/link
+- Member count displayed (e.g., "15 members")
+- "Add User" button displayed in the header
 
 **Chat Messages Area**:
 - Scrollable list of posts/messages
@@ -120,13 +121,14 @@ This section describes the main content screens: Home (News Feed), My Rings, and
 - Picture upload button/icon (opens file picker)
 - Selected image preview (thumbnail, with remove option)
 - Post button (enabled when message text is entered)
-- Character count indicator (optional, showing remaining characters out of 5000)
+- Character count indicator displayed below the text input field, showing remaining characters out of 5000
 
-**Add User Section** (optional, can be in header or as a button):
-- "Add User" button or link
-- Username input field (appears when Add User is clicked)
-- Add button
-- Cancel button
+**Add User Functionality**:
+- "Add User" button is located in the Ring Header
+- When "Add User" button is clicked, a modal dialog appears with:
+  - Username input field
+  - Add button
+  - Cancel button
 
 **Footer Navigation**: Standard footer with all five buttons
 
