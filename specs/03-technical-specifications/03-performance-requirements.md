@@ -51,7 +51,7 @@ The system must support 1000 concurrent authenticated users performing operation
 **File Management**:
 - Images are permanent and not automatically deleted
 - No file cleanup or archival policies in initial version
-- File system or cloud storage handles physical file storage
+- Local filesystem handles physical file storage
 
 ## 3.4 Desired Response Time
 
