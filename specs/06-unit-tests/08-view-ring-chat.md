@@ -83,7 +83,7 @@ const post3 = {
 1. Create ring with multiple posts
 2. Add user as member of ring
 3. Authenticate as user
-4. Send GET request to `/api/rings/:ringId/chat`
+4. Send GET request to `/api/rings/:id/chat`
 5. Verify response contains all posts
 6. Verify posts are formatted correctly
 
@@ -302,7 +302,7 @@ expect(response.body.error).toBe('You are not a member of this Ring.');
 **Description**: Verifies that unauthenticated requests are rejected.
 
 **Test Steps**:
-1. Send GET request to `/api/rings/:ringId/chat` without authentication token
+1. Send GET request to `/api/rings/:id/chat` without authentication token
 2. Verify request is rejected
 
 **Expected Results**:

@@ -90,7 +90,7 @@ const invalidFormatImage = { buffer: Buffer.from('...'), mimetype: 'image/bmp', 
 **Test Steps**:
 1. Create ring and add user as member
 2. Authenticate as user
-3. Send POST request to `/api/rings/:ringId/posts` with message text
+3. Send POST request to `/api/rings/:id/posts` with message text
 4. Verify response status code is 201 Created
 5. Verify post is created in database
 6. Verify post data is returned
@@ -371,7 +371,7 @@ expect(response.body.error).toBe('You are not a member of this Ring.');
 **Description**: Verifies that unauthenticated post creation requests are rejected.
 
 **Test Steps**:
-1. Send POST request to `/api/rings/:ringId/posts` without authentication token
+1. Send POST request to `/api/rings/:id/posts` without authentication token
 2. Verify request is rejected
 
 **Expected Results**:
