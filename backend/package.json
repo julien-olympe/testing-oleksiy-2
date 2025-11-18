@@ -1,0 +1,35 @@
+{
+  "name": "rings-backend",
+  "version": "1.0.0",
+  "description": "Rings application backend API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "migrate": "tsx src/database/migrate.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "latest",
+    "@fastify/cors": "latest",
+    "@fastify/multipart": "latest",
+    "@fastify/rate-limit": "latest",
+    "@fastify/session": "latest",
+    "@fastify/static": "latest",
+    "bcrypt": "latest",
+    "fastify": "latest",
+    "pg": "latest",
+    "uuid": "latest"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "latest",
+    "@types/node": "latest",
+    "@types/pg": "latest",
+    "@types/uuid": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}
